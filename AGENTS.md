@@ -1,7 +1,7 @@
 # INSPOWER website – structure & maintenance guide
 
 Static, dependency-free website for the INSPOWER dance studio (Meirav Sherer), Hebrew, RTL.
-No build step. Any static host (GitHub Pages, Netlify, cPanel) serves it as-is.
+No build step. Hosted on GitHub Pages via the workflow in `.github/workflows/` (see Deployment); any static host can serve it as-is.
 
 ## Pages
 
@@ -76,7 +76,7 @@ Season change checklist: update `season` in JSON (fills `[data-season]` elements
 ## Design system (css/style.css)
 
 - Tokens in `:root`: `--bg`, `--purple`, `--magenta`, `--cyan`, `--grad`, fonts, radius.
-- Dark neon theme matching the logo. Hero section is intentionally white (photo has a white background).
+- Dark neon theme matching the logo. Hero is a full-bleed photo (`assets/hero.jpg`) with a dark gradient overlay (`.hero::before`).
 - Fonts: Heebo (body), Secular One (display) from Google Fonts.
 - Breakpoints: 1000px (tablet), 760px (mobile – nav collapses to hamburger).
 - Class names follow BEM-ish `block__element--modifier`.
@@ -94,14 +94,20 @@ Phone 052-4280222 · info@inspower.co.il · Instagram/Facebook/TikTok/YouTube li
 
 ## Deployment
 
-`.github/workflows/deploy.yml` runs on push to `main`: builds `dist/` (copies `index.html`, `schedule.html`,
-`error.html`, `css/`, `js/`, `data/`, `assets/`), syncs it to S3 with `--delete`, then invalidates CloudFront.
+`.github/workflows/deploy.yml` runs on push to `main` (and manually via workflow_dispatch): builds `dist/`
+(copies `index.html`, `schedule.html`, `error.html`, `css/`, `js/`, `data/`, `assets/`, plus `error.html` as
+`404.html` and a `.nojekyll` marker), uploads it as a Pages artifact and deploys it with `actions/deploy-pages`.
 **A new top-level file or folder that must be served has to be added to the "Build dist" step.**
 `design/`, `AGENTS.md`, `.claude/` are never deployed.
 
-On S3 + CloudFront the 404 page is wired in the CloudFront distribution, not in the repo:
-Error pages → custom error response for 403 and 404 → response page path `/error.html`, response code 404.
-(S3 returns 403 for missing keys when the bucket is private behind an OAC, hence both codes.)
+Repo setting: Settings → Pages → Source = "GitHub Actions" (no branch publishing).
+Custom domain: Settings → Pages → Custom domain = `inspower.co.il` (GitHub writes DNS instructions there; an
+`A`/`ALIAS` record to GitHub Pages IPs plus `www` CNAME). When a custom domain is set, also add a `CNAME` file
+step to the build (`echo inspower.co.il > dist/CNAME`) so it survives redeploys.
+
+404: GitHub Pages serves `404.html` at the root for unknown paths – the build step creates it from `error.html`.
+`error.html` uses absolute paths (`/css/...`), which assume the site is at the domain root (custom domain or a
+`<user>.github.io` user site). On a project URL like `meiravsherer.github.io/website/` those paths break.
 
 ### 404 page on other hosts
 
