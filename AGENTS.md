@@ -88,10 +88,6 @@ Each page has: `<title>`, description, keywords, canonical, Open Graph, Twitter 
 `https://inspower.co.il/`. Update the base URL in both files if the domain changes.
 A `sitemap.xml` / `robots.txt` can be added at the root when deploying.
 
-## Contact details (appear in footer + JSON-LD)
-
-Phone 052-4280222 · info@inspower.co.il · Instagram/Facebook/TikTok/YouTube links in footer.
-
 ## Deployment
 
 `.github/workflows/deploy.yml` runs on push to `main` (and manually via workflow_dispatch): builds `dist/`
@@ -101,9 +97,9 @@ Phone 052-4280222 · info@inspower.co.il · Instagram/Facebook/TikTok/YouTube li
 `design/`, `AGENTS.md`, `.claude/` are never deployed.
 
 Repo setting: Settings → Pages → Source = "GitHub Actions" (no branch publishing).
-Custom domain: Settings → Pages → Custom domain = `inspower.co.il` (GitHub writes DNS instructions there; an
-`A`/`ALIAS` record to GitHub Pages IPs plus `www` CNAME). When a custom domain is set, also add a `CNAME` file
-step to the build (`echo inspower.co.il > dist/CNAME`) so it survives redeploys.
+Custom domain: `inspower.co.il`, set in Settings → Pages → Custom domain and written as `dist/CNAME` by the
+build step so it survives redeploys. Changing the domain = change both places. DNS: `A`/`ALIAS` records to the
+GitHub Pages IPs plus a `www` CNAME to `meiravsherer.github.io` (instructions appear in the Pages settings).
 
 404: GitHub Pages serves `404.html` at the root for unknown paths – the build step creates it from `error.html`.
 `error.html` uses absolute paths (`/css/...`), which assume the site is at the domain root (custom domain or a

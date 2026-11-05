@@ -28,6 +28,7 @@ jobs:
           cp error.html dist/404.html
           cp -r css js data assets dist/
           touch dist/.nojekyll
+          echo inspower.co.il > dist/CNAME
 
       - uses: actions/configure-pages@v5
         with:
