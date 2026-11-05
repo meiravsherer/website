@@ -1,0 +1,51 @@
+{
+  "season": "2026-2027",
+  "days": ["ראשון", "שני", "שלישי", "רביעי", "חמישי", "שישי"],
+  "branches": {
+    "rishon": { "name": "ראשון לציון", "address": "ז'בוטינסקי 17", "short": "ז'בוטינסקי" },
+    "marom":  { "name": "מרום ראשון", "address": "", "short": "מרום ראשון" }
+  },
+  "categories": {
+    "kids":   "ילדים ונוער",
+    "troupe": "להקות",
+    "women":  "נשים"
+  },
+  "notes": [
+    "* כולל מופע – הקבוצה משתתפת במופע סוף השנה",
+    "ייתכנו שינויים במערכת"
+  ],
+  "classes": [
+    { "day": 0, "time": "16:00", "title": "להקה MAGIC POWER", "branch": "marom", "category": "troupe" },
+    { "day": 0, "time": "17:00", "title": "היפ הופ ב'-ג'", "branch": "marom", "category": "kids" },
+    { "day": 0, "time": "17:45", "title": "הורים וילדים", "subtitle": "גילאי 5-10", "branch": "marom", "category": "kids" },
+    { "day": 0, "time": "19:00", "title": "פיוז'ן נשים", "branch": "rishon", "category": "women" },
+    { "day": 0, "time": "20:00", "title": "היפ הופ נשים", "branch": "rishon", "category": "women" },
+    { "day": 0, "time": "21:00", "title": "פיוז'ן נשים", "subtitle": "כולל מופע*", "branch": "marom", "category": "women" },
+
+    { "day": 1, "time": "16:00", "title": "היפ הופ ו'-ז'", "branch": "marom", "category": "kids" },
+    { "day": 1, "time": "17:00", "title": "היפ הופ ד'-ה'", "branch": "marom", "category": "kids" },
+    { "day": 1, "time": "18:00", "title": "להקה ICONIC POWER", "branch": "marom", "category": "troupe" },
+    { "day": 1, "time": "19:00", "title": "להקה MPOWER", "branch": "marom", "category": "troupe" },
+    { "day": 1, "time": "20:15", "title": "נשים מתקדמות", "subtitle": "INFINITY · כולל מופע*", "branch": "marom", "category": "women" },
+
+    { "day": 2, "time": "16:00", "title": "להקה MAGIC POWER", "branch": "marom", "category": "troupe" },
+    { "day": 2, "time": "17:00", "title": "גיל הרך", "subtitle": "גילאי 4-6", "branch": "marom", "category": "kids" },
+    { "day": 2, "time": "17:45", "title": "היפ הופ א'-ב'", "branch": "marom", "category": "kids" },
+    { "day": 2, "time": "20:00", "title": "נשים מתחילות", "subtitle": "כולל מופע*", "branch": "rishon", "category": "women" },
+
+    { "day": 3, "time": "16:00", "title": "פיוז'ן ד'-ו'", "branch": "marom", "category": "kids" },
+    { "day": 3, "time": "17:00", "title": "היפ הופ א'-ג'", "branch": "marom", "category": "kids" },
+    { "day": 3, "time": "17:45", "title": "היפ הופ ג'-ד'", "branch": "marom", "category": "kids" },
+    { "day": 3, "time": "19:45", "title": "נשים רמה בינונית", "subtitle": "WARRIORS · כולל מופע*", "branch": "rishon", "category": "women" },
+
+    { "day": 4, "time": "15:00", "title": "אקרודאנס ד'-ז'", "branch": "marom", "category": "kids" },
+    { "day": 4, "time": "16:00", "title": "להקה ICONIC POWER", "branch": "marom", "category": "troupe" },
+    { "day": 4, "time": "17:30", "title": "גיל הרך", "subtitle": "גילאי 4-6", "branch": "marom", "category": "kids" },
+    { "day": 4, "time": "18:15", "title": "להקה MPOWER", "branch": "marom", "category": "troupe" },
+    { "day": 4, "time": "20:00", "title": "נשים מתחילות", "subtitle": "היפ הופ · ללא מופע", "branch": "marom", "category": "women" },
+    { "day": 4, "time": "21:00", "title": "דאנסהול נשים", "branch": "marom", "category": "women" },
+
+    { "day": 5, "time": "12:45", "title": "להקה MAGIC POWER", "branch": "marom", "category": "troupe" },
+    { "day": 5, "time": "14:00", "title": "להקה ICONIC POWER", "branch": "marom", "category": "troupe" }
+  ]
+}

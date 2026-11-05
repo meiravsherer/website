@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>מערכת שעות 2026-2027 | INSPOWER</title>
+  <meta name="description" content="מערכת השעות של סטודיו INSPOWER לשנת 2026-2027 – היפ הופ ילדים, נוער ונשים בראשון לציון.">
+  <meta name="keywords" content="היפ הופ, חוג ריקוד, סטודיו לריקוד, ראשון לציון, שיעורי ריקוד לילדים, היפ הופ נשים, מירב שרר, INSPOWER">
+  <meta name="author" content="INSPOWER – מירב שרר">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0a0612">
+  <link rel="canonical" href="https://inspower.co.il/schedule.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="INSPOWER">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:title" content="מערכת שעות 2026-2027 | INSPOWER">
+  <meta property="og:description" content="מערכת השעות של סטודיו INSPOWER לשנת 2026-2027 – היפ הופ ילדים, נוער ונשים בראשון לציון.">
+  <meta property="og:url" content="https://inspower.co.il/schedule.html">
+  <meta property="og:image" content="https://inspower.co.il/assets/hero.jpg">
+  <meta property="og:image:width" content="1440">
+  <meta property="og:image:height" content="819">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="מערכת שעות 2026-2027 | INSPOWER">
+  <meta name="twitter:description" content="מערכת השעות של סטודיו INSPOWER לשנת 2026-2027 – היפ הופ ילדים, נוער ונשים בראשון לציון.">
+  <meta name="twitter:image" content="https://inspower.co.il/assets/hero.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DanceSchool",
+    "name": "INSPOWER",
+    "alternateName": "INSPOWER – מירב שרר",
+    "url": "https://inspower.co.il/",
+    "logo": "https://inspower.co.il/assets/logo.svg",
+    "image": "https://inspower.co.il/assets/hero.jpg",
+    "description": "מערכת השעות של סטודיו INSPOWER לשנת 2026-2027 – היפ הופ ילדים, נוער ונשים בראשון לציון.",
+    "telephone": "+972-52-4280222",
+    "email": "info@inspower.co.il",
+    "founder": { "@type": "Person", "name": "מירב שרר" },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ז'בוטינסקי 17",
+      "addressLocality": "ראשון לציון",
+      "addressCountry": "IL"
+    },
+    "sameAs": [
+      "https://www.instagram.com/meiravsherer",
+      "https://www.facebook.com/meirav.dance",
+      "https://www.tiktok.com/@meiravsherer",
+      "https://www.youtube.com/user/meiravable"
+    ]
+  }
+  </script>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700&family=Secular+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="index.html">
+      <img class="brand__logo" src="assets/logo.svg" alt="INSPOWER">
+      <span class="brand__text">INSPOWER<span class="brand__sub">MEIRAV SHERER · DANCE STUDIO</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="תפריט" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="index.html">דף הבית</a>
+      <a href="schedule.html" class="is-active">מערכת שעות</a>
+      <a href="https://inspower.co.il/conf/" class="ext" target="_blank" rel="noopener">חנות</a>
+      <a href="https://inspower.co.il/sign/" class="nav__cta" target="_blank" rel="noopener">הרשמה 2026-2027</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <div class="page-head">
+    <span class="season" data-season="שנת הלימודים {season}">שנת הלימודים 2026-2027</span>
+    <h1>מערכת <span class="grad-text">שעות</span></h1>
+    <p class="section__sub" style="margin-bottom:0">בחרו סוג שיעור או סניף כדי לסנן את המערכת</p>
+    <div id="filters"></div>
+    <div class="legend" id="legend"></div>
+  </div>
+
+  <div class="sched" id="schedule" aria-label="מערכת שעות שבועית"></div>
+  <div class="sched-list" id="schedule-list"></div>
+
+  <div class="notes" id="notes"></div>
+
+  <section class="cta-band" style="padding-top:20px">
+    <h2 class="grad-text">מצאתם את הקבוצה שלכם?</h2>
+    <p data-season="ההרשמה לשנת {season} פתוחה">ההרשמה לשנת 2026-2027 פתוחה</p>
+    <a class="btn btn--primary" href="https://inspower.co.il/sign/" target="_blank" rel="noopener">להרשמה</a>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="brand" style="margin-bottom:12px"><img class="brand__logo" src="assets/logo.svg" alt=""><span class="brand__text">INSPOWER</span></div>
+        <p style="color:var(--muted);margin:0;font-size:14px">סטודיו לריקוד של מירב שרר · היפ הופ לילדים, נוער ונשים</p>
+      </div>
+      <div>
+        <h4>ניווט</h4>
+        <ul>
+          <li><a href="index.html">דף הבית</a></li>
+          <li><a href="schedule.html">מערכת שעות</a></li>
+          <li><a href="https://inspower.co.il/sign/" target="_blank" rel="noopener">הרשמה</a></li>
+          <li><a href="https://inspower.co.il/conf/" target="_blank" rel="noopener">חנות</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>צרו קשר</h4>
+        <ul>
+          <li><a href="tel:0524280222">052-4280222</a></li>
+          <li><a href="mailto:info@inspower.co.il">info@inspower.co.il</a></li>
+        </ul>
+        <div class="socials" style="margin-top:14px">
+          <a href="https://www.instagram.com/meiravsherer" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/meirav.dance" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.tiktok.com/@meiravsherer" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://www.youtube.com/user/meiravable" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom"><span>© 2026 INSPOWER · כל הזכויות שמורות</span><span>לרקוד, להנות, להשתחרר!</span></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/schedule.js"></script>
+</body>
+</html>
