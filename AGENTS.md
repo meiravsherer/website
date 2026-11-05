@@ -17,7 +17,14 @@ Navigation (same in both pages, header + footer):
 - חנות → external, currently `https://inspower.co.il/conf/`
 - הרשמה → external, currently `https://inspower.co.il/sign/` (styled as CTA button)
 
-The header and footer are duplicated verbatim in both HTML files. **When changing one, change both.**
+The header and footer are duplicated verbatim in all three HTML files. **When changing one, change all.**
+
+### Registration / store links – currently disabled
+Every הרשמה / חנות link (header, footer, hero, CTA bands, in all three pages) carries `class="is-disabled"`,
+`aria-disabled="true"`, `tabindex="-1"`. CSS greys it out and blocks clicks.
+The `href` values are kept. **To re-open:** remove those three attributes from each link (grep `is-disabled`),
+update the href if the URL changed, and change the CTA copy back from "תיפתח בקרוב" to "פתוחה" in
+`index.html` and in the `data-season` attribute in `schedule.html`.
 
 ## Directory layout
 

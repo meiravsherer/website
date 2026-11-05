@@ -56,6 +56,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.
 .btn--ghost { border-color: var(--purple); color: var(--white); }
 .btn--ghost:hover { background: rgba(155, 77, 255, .18); }
 
+/* Disabled links (registration / store closed). Remove .is-disabled to re-enable. */
+.is-disabled { pointer-events: none; cursor: default; opacity: .45; filter: grayscale(.7); box-shadow: none !important; }
+
 /* ===== Header ===== */
 .header {
   position: sticky; top: 0; z-index: 50;
