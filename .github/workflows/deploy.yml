@@ -26,9 +26,15 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ vars.AWS_REGION }}
 
+      - name: Build dist
+        run: |
+          rm -rf dist && mkdir dist
+          cp index.html schedule.html error.html dist/
+          cp -r css js data assets dist/
+
       - name: Deploy to S3
         run: |
-          aws s3 sync ./dist "s3://${{ vars.S3_BUCKET_NAME }}"
+          aws s3 sync ./dist "s3://${{ vars.S3_BUCKET_NAME }}" --delete
 
       - name: CloudFront Invalidation
         run: |

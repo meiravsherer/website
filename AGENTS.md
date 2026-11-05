@@ -92,7 +92,18 @@ A `sitemap.xml` / `robots.txt` can be added at the root when deploying.
 
 Phone 052-4280222 · info@inspower.co.il · Instagram/Facebook/TikTok/YouTube links in footer.
 
-## Deployment – 404 page
+## Deployment
+
+`.github/workflows/deploy.yml` runs on push to `main`: builds `dist/` (copies `index.html`, `schedule.html`,
+`error.html`, `css/`, `js/`, `data/`, `assets/`), syncs it to S3 with `--delete`, then invalidates CloudFront.
+**A new top-level file or folder that must be served has to be added to the "Build dist" step.**
+`design/`, `AGENTS.md`, `.claude/` are never deployed.
+
+On S3 + CloudFront the 404 page is wired in the CloudFront distribution, not in the repo:
+Error pages → custom error response for 403 and 404 → response page path `/error.html`, response code 404.
+(S3 returns 403 for missing keys when the bucket is private behind an OAC, hence both codes.)
+
+### 404 page on other hosts
 
 `error.html` is only served for unknown paths if the host is told about it:
 - Apache / cPanel: `.htaccess` → `ErrorDocument 404 /error.html`
